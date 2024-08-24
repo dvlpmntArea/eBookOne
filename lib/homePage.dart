@@ -10,12 +10,12 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
 const url = "https://play.google.com/store/apps";
 
-class _MyHomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   int _selected = 0;
@@ -74,7 +74,7 @@ class _MyHomePageState extends State<HomePage> {
                         child: DrawerHeader(
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                              image: AssetImage('assets/image/imag1.png'),
+                              image: AssetImage(''),
                               fit: BoxFit.cover,
                             )),
                             child: Column(
@@ -94,6 +94,7 @@ class _MyHomePageState extends State<HomePage> {
                           ),
                         ),
                         onTap: () {
+                          // ignore: deprecated_member_use
                           launch(url);
                           changeSelected(0);
                         },
@@ -137,10 +138,11 @@ class _MyHomePageState extends State<HomePage> {
                           ),
                         ),
                         onTap: () {
+                          /*
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ()));
+                                  builder: (context) => ()));*/
                           changeSelected(2);
                         },
                       ),
@@ -151,6 +153,7 @@ class _MyHomePageState extends State<HomePage> {
             ),
           ),
         ),
+        // ignore: deprecated_member_use
         body: WillPopScope(
           onWillPop: () async {
             alert(
@@ -219,10 +222,12 @@ class _MyHomePageState extends State<HomePage> {
                             shape: RoundedRectangleBorder(
                                 side: BorderSide(color: Colors.white))),
                         onPressed: () {
+                          /*
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => ()));
+                                  */
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(10),
@@ -251,10 +256,11 @@ class _MyHomePageState extends State<HomePage> {
                                 side: BorderSide(color: Colors.white)),
                           ),
                           onPressed: () {
+                            /*
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ()));
+                                    builder: (context) => ()));*/
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(10),
@@ -282,10 +288,43 @@ class _MyHomePageState extends State<HomePage> {
                               shape: RoundedRectangleBorder(
                                   side: BorderSide(color: Colors.white))),
                           onPressed: () {
+                            /*
                             Navigator.push(
-                                context,
+                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ()));
+                                    builder: (context) => ()));*/
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Row(
+                              children: [
+                                Text(
+                                  'তৃতীয় অংশ।',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Spacer(),
+                                Icon(Icons.chevron_right, color: Colors.white),
+                              ],
+                            ),
+                          )),
+                    ),
+                  ),
+                  Center(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 1.3,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.lightBlue,
+                              shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.white))),
+                          onPressed: () {
+                            /*
+                            Navigator.push(
+                                 context,
+                                MaterialPageRoute(
+                                    builder: (context) => ()));*/
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(10),
